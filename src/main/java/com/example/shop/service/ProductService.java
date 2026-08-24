@@ -5,6 +5,8 @@ import com.example.shop.dto.ProductResponse;
 import com.example.shop.dto.UpdateProductRequest;
 import com.example.shop.entity.Category;
 import com.example.shop.entity.Product;
+import com.example.shop.exception.CategoryNotFoundException;
+import com.example.shop.exception.ProductNotFoundException;
 import com.example.shop.repository.CategoryRepository;
 import com.example.shop.repository.ProductRepository;
 import org.springframework.stereotype.Service;
@@ -25,7 +27,7 @@ public class ProductService {
     @Transactional(readOnly = true)
     public ProductResponse getProduct(Integer id) {
         Product product = productRepository.findById(id)
-                .orElseThrow();
+                .orElseThrow(() -> new ProductNotFoundException(id));
         return new ProductResponse(
                 product.getId(),
                 product.getName(),
@@ -55,7 +57,7 @@ public class ProductService {
     public ProductResponse createProduct(CreateProductRequest request) {
 
         Category category = categoryRepository.findById(request.getCategoryId())
-                .orElseThrow();
+                .orElseThrow(()-> new CategoryNotFoundException(request.getCategoryId()));
 
         Product product = new Product();
         product.setName(request.getName());
@@ -79,7 +81,7 @@ public class ProductService {
     public ProductResponse updateProduct(Integer id, UpdateProductRequest request) {
 
         Product product = productRepository.findById(id)
-                .orElseThrow();
+                .orElseThrow(()-> new ProductNotFoundException(id));
 
         if (request.getName() != null) {
             product.setName(request.getName());
@@ -91,7 +93,7 @@ public class ProductService {
 
         if (request.getCategoryId() != null){
             Category category = categoryRepository.findById(request.getCategoryId())
-                    .orElseThrow();
+                    .orElseThrow(()-> new CategoryNotFoundException(request.getCategoryId()));
             product.setCategory(category);
         }
 
@@ -108,7 +110,7 @@ public class ProductService {
     public void deleteProduct(Integer id) {
 
         Product product = productRepository.findById(id)
-                .orElseThrow();
+                .orElseThrow(()-> new ProductNotFoundException(id));
 
         productRepository.delete(product);
     }
