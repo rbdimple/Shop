@@ -55,6 +55,8 @@ This project provides product and category management features, including CRUD o
 ### Create Product
 
 Request:
+
+```json
 {
 "name": "Trackball Mouse",
 "price": 3850,
@@ -62,8 +64,10 @@ Request:
 "stock": 16,
 "categoryId": 2
 }
-
+```
 Response:
+
+```json
 {
 "id": 21,
 "name": "Trackball Mouse",
@@ -72,20 +76,21 @@ Response:
 "categoryId": 2,
 "categoryName": "Mouse"
 }
+```
 
 ## Testing
 Unit tests cover the Service and Controller layers.
 Service tests use Mockito to mock repository dependencies.
 Controller tests use MockMvc to verify:
 
-HTTP status codes
-JSON responses
-Request validation
-Exception handling
+- HTTP status codes
+- JSON responses
+- Request validation
+- Exception handling
 
 ## How to Run
-1.Create a MySQL database named shop.
-2.Configure the database connection.
-3.Set the DB_PASSWORD environment variable.
-4.Run the Spring Boot application.
-5.Test the API with Postman or another HTTP client.
+1. Create a MySQL database named shop.
+2. Configure the database connection.
+3. Set the DB_PASSWORD environment variable.
+4. Run the Spring Boot application.
+5. Test the API with Postman or another HTTP client.
