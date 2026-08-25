@@ -23,8 +23,15 @@ public class ProductController {
     }
 
     @GetMapping
-    public ResponseEntity<List<ProductResponse>> getProducts(){
-        return ResponseEntity.ok(productService.getAllProducts());
+    public ResponseEntity<List<ProductResponse>> getProducts(
+            @RequestParam(required = false) Integer categoryId
+    ){
+        if (categoryId == null){
+            return ResponseEntity.ok(productService.getAllProducts());
+        }
+        else {
+            return ResponseEntity.ok(productService.getProductsByCategoryId(categoryId));
+        }
     }
 
     @GetMapping("/{id}")

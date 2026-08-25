@@ -53,6 +53,21 @@ public class ProductService {
                 .toList();
     }
 
+    @Transactional(readOnly  = true)
+    public List<ProductResponse> getProductsByCategoryId(Integer categoryId){
+        return productRepository.findByCategoryIdWithCategory(categoryId)
+                .stream()
+                .map(product -> new ProductResponse(
+                        product.getId(),
+                        product.getName(),
+                        product.getPrice(),
+                        product.getStock(),
+                        product.getCategory().getId(),
+                        product.getCategory().getName()
+                ))
+                .toList();
+    }
+
     @Transactional
     public ProductResponse createProduct(CreateProductRequest request) {
 

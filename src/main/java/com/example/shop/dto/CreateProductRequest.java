@@ -22,9 +22,21 @@ public class CreateProductRequest {
     @Positive
     private Integer categoryId;
 
-    public String getName() {
-        return name;
+    public CreateProductRequest(){}
+
+    public CreateProductRequest(String name,
+                                Integer price,
+                                Integer cost,
+                                Integer stock,
+                                Integer categoryId){
+        this.name = name;
+        this.price = price;
+        this.cost = cost;
+        this.stock = stock;
+        this.categoryId = categoryId;
     }
+
+    public String getName() { return name; }
 
     public Integer getPrice(){
         return price;

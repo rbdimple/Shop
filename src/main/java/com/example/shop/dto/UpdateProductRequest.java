@@ -1,5 +1,6 @@
 package com.example.shop.dto;
 
+import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.validation.constraints.*;
 
 public class UpdateProductRequest {
@@ -22,5 +23,17 @@ public class UpdateProductRequest {
 
     public Integer getCategoryId(){
         return this.categoryId;
+    }
+
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public void setPrice(Integer price){
+        this.price = price;
+    }
+
+    public void setCategoryId(Integer categoryId){
+        this.categoryId = categoryId;
     }
 }

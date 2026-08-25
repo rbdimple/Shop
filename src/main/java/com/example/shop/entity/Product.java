@@ -34,9 +34,9 @@ public class Product {
         return this.price;
     }
 
-    public String getName() {
-        return this.name;
-    }
+    public String getName() { return this.name; }
+
+    public Integer getCost() { return this.cost; }
 
     public Integer getStock() {
         return this.stock;
@@ -44,6 +44,10 @@ public class Product {
 
     public Category getCategory() {
         return this.category;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public void setName(String name) {
@@ -77,4 +81,5 @@ public class Product {
     public void onUpdate(){
        this.updateTime = LocalDateTime.now();
     }
+
 }

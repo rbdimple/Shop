@@ -20,4 +20,11 @@ public class ProductResponse {
     private Integer stock;
     private Integer categoryId;
     private String categoryName;
+
+    public Integer getId(){ return id; }
+    public String  getName(){ return name; }
+    public Integer getPrice(){ return price; }
+    public Integer getStock(){ return stock; }
+    public Integer getCategoryId(){ return categoryId; }
+    public String getCategoryName(){ return categoryName; }
 }

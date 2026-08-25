@@ -12,4 +12,9 @@ public interface ProductRepository
         SELECT DISTINCT p FROM Product p LEFT JOIN FETCH p.category 
 """)
     List<Product> findAllwithCategory();
+
+    @Query("""
+        SELECT p FROM Product p JOIN FETCH p.category WHERE p.category.id = :categoryId 
+""")
+    List<Product> findByCategoryIdWithCategory(Integer categoryId);
 }
