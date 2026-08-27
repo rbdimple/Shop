@@ -3,7 +3,6 @@ package com.example.shop.controller;
 import com.example.shop.dto.CreateProductRequest;
 import com.example.shop.dto.ProductResponse;
 import com.example.shop.dto.UpdateProductRequest;
-import com.example.shop.entity.Product;
 import com.example.shop.service.ProductService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;

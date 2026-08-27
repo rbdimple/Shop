@@ -1,6 +1,5 @@
 package com.example.shop.dto;
 
-import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.validation.constraints.*;
 
 public class UpdateProductRequest {

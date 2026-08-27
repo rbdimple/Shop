@@ -9,7 +9,6 @@ import com.example.shop.exception.ProductNotFoundException;
 import com.example.shop.repository.CategoryRepository;
 import com.example.shop.repository.ProductRepository;
 import com.example.shop.service.ProductService;
-import org.apache.logging.log4j.util.PropertiesUtil;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;

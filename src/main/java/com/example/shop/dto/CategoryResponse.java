@@ -1,7 +1,5 @@
 package com.example.shop.dto;
 
-import com.example.shop.repository.CategoryRepository;
-
 public class CategoryResponse {
 
     private Integer id;

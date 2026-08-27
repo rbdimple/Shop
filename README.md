@@ -5,7 +5,7 @@ A simple RESTful API built with Spring Boot for practicing backend development w
 This project provides product and category management features, including CRUD operations, category filtering, validation, exception handling, and unit tests.
 
 ## Tech Stack
-- Java
+- Java 17
 - Spring Boot
 - Spring MVC
 - Spring Data JPA
@@ -89,8 +89,11 @@ Controller tests use MockMvc to verify:
 - Exception handling
 
 ## How to Run
+Requirements: Java 17, MySQL, Maven
 1. Create a MySQL database named shop.
 2. Configure the database connection.
-3. Set the DB_PASSWORD environment variable.
+3. Set the DB_USERNAME and the DB_PASSWORD environment variable.
+   DB_USERNAME=your_mysql_username
+   DB_PASSWORD=your_mysql_password
 4. Run the Spring Boot application.
 5. Test the API with Postman or another HTTP client.
