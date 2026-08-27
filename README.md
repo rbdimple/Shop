@@ -92,7 +92,7 @@ Controller tests use MockMvc to verify:
 Requirements: Java 17, MySQL, Maven
 1. Create a MySQL database named shop.
 2. Configure the database connection.
-3. Set the DB_USERNAME and the DB_PASSWORD environment variable.
+3. Set the DB_USERNAME and DB_PASSWORD environment variables.
    ```text
    DB_USERNAME=your_mysql_username
    DB_PASSWORD=your_mysql_password
