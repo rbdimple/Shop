@@ -93,7 +93,9 @@ Requirements: Java 17, MySQL, Maven
 1. Create a MySQL database named shop.
 2. Configure the database connection.
 3. Set the DB_USERNAME and the DB_PASSWORD environment variable.
+   ```text
    DB_USERNAME=your_mysql_username
    DB_PASSWORD=your_mysql_password
+   ```
 4. Run the Spring Boot application.
 5. Test the API with Postman or another HTTP client.
